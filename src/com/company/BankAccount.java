@@ -24,12 +24,17 @@ public class BankAccount {
             System.out.println("Запрашиваемая сумма больше остатка на счете. Введите сумму меньше " + amount);
             throw new LimitException("Запрашиваемая сумма больше остатка на счете. Введите сумму меньше :"+
                     amount, amount);
+
         }
 
         else {
             amount = amount - sum;
         }
 
+        return amount;
+    }
+    public double withdraw(double amount) throws LimitException{
+        this.amount = amount - amount;
         return amount;
     }
 }
